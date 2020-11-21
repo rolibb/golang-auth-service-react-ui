@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  api:
+    container_name: "api"
+    build: "./api"
+    ports:
+      - "10000:10000"
+    volumes:
+      - "./api:/go/src/app"
+    depends_on:
+      - "mongo"
+    links:
+      - mongo
+  web:
+    container_name: "web"
+    build: "./web"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "api"
+    links:
+      - api
+  mongo:
+    image: "mongo:latest"
+    container_name: "mongoCompose"
+    ports:
+      - "27100:27017"
