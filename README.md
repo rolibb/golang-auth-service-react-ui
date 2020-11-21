@@ -18,7 +18,7 @@ POST http://localhost:10000/signup
 Body
 
 {
-  "email": "test@test.com"
+  "email": "test@test.com",
   "password": "test"
 }
 ```
@@ -31,7 +31,7 @@ POST http://localhost:10000/login
 Body
 
 {
-  "email": "test@test.com"
+  "email": "test@test.com",
   "password": "test"
 }
 ```
